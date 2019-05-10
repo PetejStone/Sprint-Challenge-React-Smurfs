@@ -24,7 +24,7 @@ class Smurf extends React.Component {
     const smurf = {
       name: this.props.name,
       age: this.props.age,
-      height: this.props.height,
+      height: this.props.height.replace('cm',''),
       id: this.props.id
     }
     this.props.editFormData(smurf)

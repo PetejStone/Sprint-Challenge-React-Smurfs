@@ -29,18 +29,18 @@ class EditSmurf extends Component {
         }
       }
        );
-     if (e.target.name === 'height') {
-        this.setState({
-          smurf: {
-            ...this.state.smurf,
-            height: `${e.target.value}cm`
-          }
-        })
-      }
+    //  if (e.target.name === 'height') {
+    //     this.setState({
+    //       smurf: {
+    //         ...this.state.smurf,
+    //         height: `${e.target.value}cm`
+    //       }
+    //     })
+    //   }
   };
 
   render() {
-      const height = JSON.stringify(this.state.smurf.height)
+      console.log(this.state.smurf.height)
       
       
     return (
@@ -67,7 +67,7 @@ class EditSmurf extends Component {
             placeholder="height (in cm)"
             value={this.state.smurf.height}
             name="height"
-            type="text"
+            type="number"
           />
           <button type="submit">Edit Smurf</button>
         </form>

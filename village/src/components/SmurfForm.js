@@ -43,6 +43,7 @@ class SmurfForm extends Component {
   };
 
   render() {
+  
     return (
       <div className="smurf-form-container">
         <form onSubmit={this.addSmurf} autoComplete="off" className="smurf-form">

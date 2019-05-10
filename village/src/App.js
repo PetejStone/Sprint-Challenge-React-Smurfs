@@ -50,9 +50,9 @@ class App extends Component {
   editSmurf = (smurf) => {
     axios.put(`http://localhost:3333/smurfs/${smurf.id}`, smurf )
     .then(res => {
-      console.log(res)
-      //this.setState({smurfs: res.data})
-     
+      //console.log(res)
+      this.setState({smurfs: res.data})
+      this.props.history.push('/')
 
     })
     .catch(err => console.log(err))
@@ -74,7 +74,7 @@ class App extends Component {
           
         </nav>
         <Route path="/smurf-form" render={ (props) =>  <SmurfForm    {...props} addSmurf={this.addSmurf} /> } />
-        <Route path="/edit-smurf" render={ (props) =>  <EditSmurf    {...props} smurf={this.state.smurf} editSmurf={this.addSmurf} /> } />
+        <Route path="/edit-smurf" render={ (props) =>  <EditSmurf    {...props} smurf={this.state.smurf} editSmurf={this.editSmurf} /> } />
         <Route exact path="/" 
               render={ (props) => 
                 <Smurfs  {...props} 
