@@ -24,10 +24,20 @@ class App extends Component {
       .catch(err => console.log(err))
   }
 
+  addSmurf = (smurf) => {
+    axios.post(`http://localhost:3333/smurfs`, smurf)
+      .then(res => {
+        console.log(res)
+        this.setState({smurfs: res.data})
+        this.props.history.push('/')
+      })
+      .catch(err => console.log(err))
+  }
+
   render() {
     return (
       <div className="App">
-        <Route path="/smurf-form" render={ (props) =>  <SmurfForm    {...props}  /> } />
+        <Route path="/smurf-form" render={ (props) =>  <SmurfForm    {...props} addSmurf={this.addSmurf} /> } />
         <Route exact path="/" render={ (props) => <Smurfs  {...props} smurfs={this.state.smurfs} /> }  />
       </div>
     );
