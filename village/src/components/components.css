@@ -1,0 +1,11 @@
+a[aria-current="true"] {
+    text-decoration: underline;
+    color: #000;
+    font-weight: bold;
+}
+
+a[aria-current="false"] {
+    text-decoration: none;
+    color: #000;
+}
+

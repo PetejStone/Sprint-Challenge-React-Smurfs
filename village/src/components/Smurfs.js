@@ -19,7 +19,6 @@ class Smurfs extends Component {
               />
             );
           })}
-          <button onClick={() => this.props.history.push('/smurf-form')}>Add a Smurf</button>
         </ul>
       </div>
     );
