@@ -4,12 +4,14 @@ import './App.css';
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
 import { Route, NavLink } from 'react-router-dom';
+import EditSmurf from './components/EditSmurf';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       smurfs: [],
+      smurf: ''
     };
   }
   // add any needed code to ensure that the smurfs collection exists on state and it has data coming from the server
@@ -45,6 +47,24 @@ class App extends Component {
       .catch(err => console.log(err))
   }
 
+  editSmurf = (smurf) => {
+    axios.put(`http://localhost:3333/smurfs/${smurf.id}`, smurf )
+    .then(res => {
+      console.log(res)
+      //this.setState({smurfs: res.data})
+     
+
+    })
+    .catch(err => console.log(err))
+  }
+
+  editFormData = (smurf) => {
+    //console.log(smurf)
+    this.setState({smurf: smurf})
+    this.props.history.push('/edit-smurf')
+    //console.log(this.state.smurf)
+  }
+
   render() {
     return (
       <div className="App">
@@ -54,7 +74,15 @@ class App extends Component {
           
         </nav>
         <Route path="/smurf-form" render={ (props) =>  <SmurfForm    {...props} addSmurf={this.addSmurf} /> } />
-        <Route exact path="/" render={ (props) => <Smurfs  {...props} smurfs={this.state.smurfs} deleteSmurf={this.deleteSmurf} /> }  />
+        <Route path="/edit-smurf" render={ (props) =>  <EditSmurf    {...props} smurf={this.state.smurf} editSmurf={this.addSmurf} /> } />
+        <Route exact path="/" 
+              render={ (props) => 
+                <Smurfs  {...props} 
+                editSmurf={this.editSmurf} 
+                smurfs={this.state.smurfs} 
+                deleteSmurf={this.deleteSmurf}
+                editFormData={this.editFormData} 
+                /> }  />
       </div>
     );
   }
