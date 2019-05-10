@@ -9,3 +9,68 @@ a[aria-current="false"] {
     color: #000;
 }
 
+.smurf {
+    padding: 1rem;
+    background-color: #61B0F7;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
+    margin: 15px;
+    width: 10rem;
+    border-radius: 15px;
+    position: relative;
+}
+
+.smurfs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.delete {
+    background-color:  rgba(255,255,255,0);
+    color: #000;
+    text-shadow: -1px -1px -1px #fff;
+    border: none;
+    font-size: 1rem;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    cursor: pointer;
+}
+
+.delete:focus {
+    outline: 0;
+}
+
+.smurf-form {
+    padding: 2rem;
+    width: 500px;
+    max-width: 100%;
+    background-color:  #61B0F7;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+.smurf-form input {
+    height: 1.2rem;
+    font-size: 1rem;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 5px;
+}
+
+.smurf-form button {
+    height: 2rem;
+    width: 50%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 15px;
+    margin-top: 1rem;
+    background-color: #99ff66;
+    cursor: pointer;
+
+}
+

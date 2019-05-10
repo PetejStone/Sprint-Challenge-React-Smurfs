@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-
+import './components.css';
 import Smurf from './Smurf';
 
 class Smurfs extends Component {
   render() {
     return (
-      <div className="Smurfs">
+      <div className="smurf-container">
         <h1>Smurf Village</h1>
-        <ul>
+        <ul className="smurfs">
           {this.props.smurfs.map(smurf => {
             return (
               <Smurf
@@ -16,6 +16,7 @@ class Smurfs extends Component {
                 age={smurf.age}
                 height={smurf.height}
                 key={smurf.id}
+                deleteSmurf={this.props.deleteSmurf}
               />
             );
           })}
