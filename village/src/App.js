@@ -50,8 +50,9 @@ class App extends Component {
   editSmurf = (smurf) => {
     axios.put(`http://localhost:3333/smurfs/${smurf.id}`, smurf )
     .then(res => {
-      //console.log(res)
-      this.setState({smurfs: res.data})
+      console.log(res.data)
+      this.setState({ smurfs: res.data})
+      
       this.props.history.push('/')
 
     })
