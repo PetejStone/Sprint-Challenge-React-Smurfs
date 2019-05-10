@@ -4,6 +4,7 @@ import './App.css';
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
 import { Route } from 'react-router-dom';
+
 class App extends Component {
   constructor(props) {
     super(props);
